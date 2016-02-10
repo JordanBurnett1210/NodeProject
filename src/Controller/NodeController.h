@@ -8,22 +8,15 @@
 #ifndef CONTROLLER_NODECONTROLLER_H_
 #define CONTROLLER_NODECONTROLLER_H_
 
-#include <iostream>
 #include <string>
-#include "../Model/ArrayNode.cpp"
-#include "../Model/ArrayNode.h"
-#include "../Model/Node.h"
 #include "../Model/Node.cpp"
-#include "../Model/CTECArray.h"
+#include "../Model/ArrayNode.cpp"
 #include "../Model/CTECArray.cpp"
 
 class NodeController
 {
 private:
-//	Node<int> intNode;
-//	ArrayNode<string> stringArrayNode;
-//	ArrayNode<string> otherArrayNode;
-	CTECArray<string> * myStringArray;
+	CTECArray<int> * notHipsterInts;
 public:
 	NodeController();
 	virtual ~NodeController();

@@ -5,8 +5,7 @@
  *      Author: jbur0473
  */
 
-#include "../Controller/NodeController.cpp"
-#include "../Controller/Nodecontroller.h"
+#include "Nodecontroller.h"
 
 int main()
 {
