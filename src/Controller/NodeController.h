@@ -14,13 +14,16 @@
 #include "../Model/ArrayNode.h"
 #include "../Model/Node.h"
 #include "../Model/Node.cpp"
+#include "../Model/CTECArray.h"
+#include "../Model/CTECArray.cpp"
 
 class NodeController
 {
 private:
-	Node<int> intNode;
-	ArrayNode<string> stringArrayNode;
-	ArrayNode<string> otherArrayNode;
+//	Node<int> intNode;
+//	ArrayNode<string> stringArrayNode;
+//	ArrayNode<string> otherArrayNode;
+	CTECArray<string> * myStringArray;
 public:
 	NodeController();
 	virtual ~NodeController();
