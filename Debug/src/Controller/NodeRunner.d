@@ -4,7 +4,8 @@ src/Controller/NodeRunner.o: ../src/Controller/NodeRunner.cpp \
   ../src/Controller/../Model/ArrayNode.cpp \
   ../src/Controller/../Model/ArrayNode.h \
   ../src/Controller/../Model/CTECArray.cpp \
-  ../src/Controller/../Model/CTECArray.h
+  ../src/Controller/../Model/CTECArray.h \
+  ../src/Controller/../Model/Timer.h
 
 ../src/Controller/Nodecontroller.h:
 
@@ -19,3 +20,5 @@ src/Controller/NodeRunner.o: ../src/Controller/NodeRunner.cpp \
 ../src/Controller/../Model/CTECArray.cpp:
 
 ../src/Controller/../Model/CTECArray.h:
+
+../src/Controller/../Model/Timer.h:

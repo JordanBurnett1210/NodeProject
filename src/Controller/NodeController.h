@@ -12,11 +12,13 @@
 #include "../Model/Node.cpp"
 #include "../Model/ArrayNode.cpp"
 #include "../Model/CTECArray.cpp"
+#include "../Model/Timer.h"
 
 class NodeController
 {
 private:
 	CTECArray<int> * notHipsterInts;
+	Timer arrayTimer;
 public:
 	NodeController();
 	virtual ~NodeController();
