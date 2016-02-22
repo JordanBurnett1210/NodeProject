@@ -29,7 +29,7 @@ public:
 	Type getFromIndex(int position);
 	Type removeFromFront();
 	Type removeFromEnd();
-	Type removeFrmoIndex();
+	Type removeFromIndex();
 	void set(int position, const Type& value);
 };
 
