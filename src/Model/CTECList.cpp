@@ -7,13 +7,17 @@
 
 #include "CTECList.h"
 
-CTECList::CTECList()
+template <class Type>
+CTECList<Type>::CTECList()
 {
-	// TODO Auto-generated constructor stub
+	this->size = 0;
+	this->head = nullptr;
+	this->end = nullptr;
 
 }
 
-CTECList::~CTECList()
+template <class Type>
+CTECList<Type>::~CTECList()
 {
 	// TODO Auto-generated destructor stub
 }
