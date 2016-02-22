@@ -16,11 +16,20 @@ class CTECArray
 private:
 	int size;
 	ArrayNode<Type> * head;
+	ArrayNode<Type> * end;
 public:
 	CTECArray(int size);
 	virtual ~CTECArray();
 	int getSize();
-	Type get(int position);
+	void addToFront(Type value);
+	void addToEnd(Type value);
+	void addAtIndex(int position, Type value);
+	Type getFront();
+	Type getEnd();
+	Type getFromIndex(int position);
+	Type removeFromFront();
+	Type removeFromEnd();
+	Type removeFrmoIndex();
 	void set(int position, const Type& value);
 };
 

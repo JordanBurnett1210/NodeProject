@@ -14,15 +14,17 @@
 #include "../Model/CTECArray.cpp"
 #include "../Model/Timer.h"
 
-class NodeController
-{
-private:
-	CTECArray<int> * notHipsterInts;
-	Timer arrayTimer;
-public:
-	NodeController();
-	virtual ~NodeController();
-	void start();
-};
-
-#endif /* CONTROLLER_NODECONTROLLER_H_ */
+//////////////////////////////////////////////
+class NodeController						//
+{											//
+private:									//
+	CTECArray<int> * notHipsterInts;		//
+	Timer arrayTimer;						//
+public:										//
+	NodeController();						//
+	virtual ~NodeController();				//
+	void start();							//
+};											//
+											//
+#endif /* CONTROLLER_NODECONTROLLER_H_ */	//
+//////////////////////////////////////////////
