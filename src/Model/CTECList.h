@@ -28,7 +28,7 @@ public:
 	Type getFromIndex(int position);
 	Type removeFromFront();
 	Type removeFromEnd();
-	Type removeFromIndex();
+	Type removeFromIndex(int index);
 	int getSize();
 	void setSize();
 };

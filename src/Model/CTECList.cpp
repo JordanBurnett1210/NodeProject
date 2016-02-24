@@ -46,13 +46,13 @@ Type CTECList<Type> :: removeFromFront()
 }
 
 template <class Type>
-Type CTECList<Type> :: removeFromIndex()
+Type CTECList<Type> :: removeFromIndex(int index)
 {
-	cout << "Type in the index of the node to be removed" << endl;
-	int index = 0;
-	cin >> index >> endl;
+	Type returnValue;
 
-	if()
+	assert(size > 0);
+	assert(index >= 0);
+	assert(index < size);
 }
 
 template <class Type>
