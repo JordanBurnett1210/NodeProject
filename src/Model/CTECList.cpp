@@ -6,6 +6,9 @@
  */
 
 #include "CTECList.h"
+#include <assert.h>
+
+using namespace std;
 
 template <class Type>
 CTECList<Type>::CTECList()
@@ -25,11 +28,41 @@ CTECList<Type>::~CTECList()
 template <class Type>
 Type CTECList<Type> :: removeFromFront()
 {
+	Type returnValue; //In case we need to use the value we are removing.
+
+	assert(size > 0);
 	//Create a pointer to what is after head.
 	ArrayNode<Type> * newHead = new ArrayNode<Type>();
 	newHead = head->getNext();
+
+	//Get what was in the head node!
+	returnValue = head->getValue();
 	//Delete what head is pointing to.
 	delete this->head;
 	//Set head to the new head.
 	this->head = newHead;
+
+	returnValue;
+}
+
+template <class Type>
+Type CTECList<Type> :: removeFromIndex()
+{
+	cout << "Type in the index of the node to be removed" << endl;
+	int index = 0;
+	cin >> index >> endl;
+
+	if()
+}
+
+template <class Type>
+void CTECList<Type> :: addToFront(Type)
+{
+
+}
+
+template <class Type>
+Type CTECList<Type> :: getFront()
+{
+
 }
