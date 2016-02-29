@@ -42,7 +42,8 @@ Type CTECList<Type> :: removeFromFront()
 	//Set head to the new head.
 	this->head = newHead;
 
-	returnValue;
+	this->calculateSize();
+	return returnValue;
 }
 
 template <class Type>
@@ -53,6 +54,72 @@ Type CTECList<Type> :: removeFromIndex(int index)
 	assert(size > 0);
 	assert(index >= 0);
 	assert(index < size);
+
+	Type thingToRemove;
+
+	ArrayNode<Type> * previous, deleteMe, newNext;
+
+	if(index == 0)
+	{
+		thingToRemove = removeFromFront();
+	}
+	else if(index == size-1)
+	{
+		thingToRemove = removeFromEnd();
+	}
+	else
+	{
+		for(int spot = 0; spot < index+1; spot++)
+		{
+
+		}
+
+		this->calculateSize();
+	}
+
+}
+
+template <class Type>
+Type CTECList<Type> :: removeFromEnd()
+{
+	assert(this->size > 0);
+
+	Type thingToRemove;
+
+	ArrayNode<Type> * newHead = new ArrayNode<Type>();
+	newHead = this->head->getValue();
+
+	thingToRemove
+}
+
+
+//Calculates the size of the list by iterating over all the nodes in the list.
+template <class Type>
+void CTECList<Type> :: calculateSize()
+{
+	assert(size >= 0);
+
+	ArrayNode<Type> * counterPointer = head;
+	int count = 0;
+
+	if(counterPointer == nullptr)
+	{
+		this->size = 0;
+		return;
+	}
+	else
+	{
+		count++;
+		while(counterPointer->getNext() != nullptr)
+		{
+			counterPointer = counterPointer->getNext();
+			count++;
+
+		}
+		this->size == count;
+		return;
+	}
+
 }
 
 template <class Type>
