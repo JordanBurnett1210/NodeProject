@@ -71,10 +71,15 @@ Type CTECList<Type> :: removeFromIndex(int index)
 	{
 		for(int spot = 0; spot < index+1; spot++)
 		{
-
+			newNext = newNext->getNext();
 		}
 
+		thingToRemove = deleteMe->getValue();
+		previous->getNext() = newNext;
+		delete deleteMe;
+
 		this->calculateSize();
+		return thingToRemove;
 	}
 
 }
@@ -82,14 +87,40 @@ Type CTECList<Type> :: removeFromIndex(int index)
 template <class Type>
 Type CTECList<Type> :: removeFromEnd()
 {
-	assert(this->size > 0);
+	//Loop over size
+	//or
+	//Loop until getNext()->getNext() == nullptr
+	//grab the value from the last node
+	//set the next to last node to point to nullptr
+	//set the next to last node as end
+	//delete the old last node
+	//Before return the variable call calculateSize()
+	//return value
 
 	Type thingToRemove;
 
-	ArrayNode<Type> * newHead = new ArrayNode<Type>();
-	newHead = this->head->getValue();
+	assert(this->size > 0);
 
-	thingToRemove
+	if(size == 1)
+	{
+		thingToRemove = removeFromFront();
+		end = nullptr;
+		calculateSize();
+		return thingToRemove;
+	}
+	else
+	{
+		ArrayNode<Type> * current = head;
+		for(int spot = 0; spot < size-1; spot++)
+		{
+			current = current->getNext();
+		}
+
+		thingToRemove = current ->getNext()->getValue();
+		end = current;
+		delete current->getNext();
+		return thingToRemove;
+	}
 }
 
 
