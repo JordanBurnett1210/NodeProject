@@ -154,9 +154,36 @@ void CTECList<Type> :: calculateSize()
 }
 
 template <class Type>
-void CTECList<Type> :: addToFront(Type)
+void CTECList<Type> :: addToFront(Type value)
 {
+	ArrayNode<Type> * oldHead = head;
 
+	ArrayNode<Type> * newHead;
+	newHead->setNext() = oldHead;
+	newHead = head;
+}
+
+template <class Type>
+void CTECList<Type> :: addToEnd(Type value)
+{
+	ArrayNode<Type> * oldEnd = end;
+	ArrayNode<Type> * newEnd = new ArrayNode<Type>(value);
+	oldEnd->setNext(newEnd);
+	newEnd = end;
+}
+
+template <class Type>
+void CTECList<Type> :: addAtIndex(int Index, Type value)
+{
+	ArrayNode<Type> * previous = head;
+	ArrayNode<Type> * newValue = new ArrayNode<Type>(value);
+	for(int i = 0; i < Index; i++)
+	{
+		previous = previous->getNext();
+	}
+	ArrayNode<Type> * newNext = previous->getNext();
+	previous->setNext(newValue);
+	newValue->setNext(newNext);
 }
 
 template <class Type>
@@ -164,3 +191,4 @@ Type CTECList<Type> :: getFront()
 {
 
 }
+
