@@ -22,7 +22,27 @@ CTECList<Type>::CTECList()
 template <class Type>
 CTECList<Type>::~CTECList()
 {
-	// TODO Auto-generated destructor stub
+	/*
+	 * 1: Start at head
+	 * 2: Iterate over nodes
+	 * 3: Update position, then delete
+	 * 4: Delete final
+	 * 5: reset size, head, and end to 0/nullptr
+	 */
+	ArrayNode<Type> * current = head;
+
+	for(int deleteCount = 0; deleteCount < size; deleteCount++)
+	{
+		ArrayNode<Type> * temp = current;
+
+		current = current->getNext();
+		head = current;
+		delete temp;
+	}
+
+	this->size =0;
+	this->head = nullptr;
+	this->end = nullptr;
 }
 
 template <class Type>
@@ -75,7 +95,7 @@ Type CTECList<Type> :: removeFromIndex(int index)
 		}
 
 		thingToRemove = deleteMe->getValue();
-		previous->getNext() = newNext;
+		previous->setNext(newNext);
 		delete deleteMe;
 
 		this->calculateSize();
@@ -154,22 +174,22 @@ void CTECList<Type> :: calculateSize()
 }
 
 template <class Type>
-void CTECList<Type> :: addToFront(Type value)
+void CTECList<Type> :: addToFront(const Type& value)
 {
-	ArrayNode<Type> * oldHead = head;
+	ArrayNode<Type> * newStuff = new ArrayNode<Type>(value, head);
+	head = newStuff;
 
-	ArrayNode<Type> * newHead;
-	newHead->setNext() = oldHead;
-	newHead = head;
+	calculateSize();
 }
 
 template <class Type>
-void CTECList<Type> :: addToEnd(Type value)
+void CTECList<Type> :: addToEnd(const Type& value)
 {
-	ArrayNode<Type> * oldEnd = end;
-	ArrayNode<Type> * newEnd = new ArrayNode<Type>(value);
-	oldEnd->setNext(newEnd);
-	newEnd = end;
+	ArrayNode<Type> * newStuff = new ArrayNode<Type>(value);
+	end->setNext(newStuff);
+	end = newStuff;
+
+	calculateSize();
 }
 
 template <class Type>
